@@ -98,4 +98,4 @@ struct ContentView: View {
 ```
 
 Much better. Looking back at what we did before though, I think the vertical spacing on the background was fine. See if you can find a **property** to make your text look like this:
-<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/LivePreview.png" width="250">
+<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/FinalProduct.png" width="250">
