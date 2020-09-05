@@ -98,4 +98,9 @@ struct ContentView: View {
 ```
 
 Much better. Looking back at what we did before though, I think the vertical spacing on the background was fine. See if you can find a **property** to make your text look like this:
+
 <img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/FinalProduct.png" width="250">
+
+Done? Awesome. Press `CMD+R` to launch the simulator and watch your app show up on a virtual iPhone!
+
+In the next tutorial, we'll add some new elements to our view to show you a more complex app.
