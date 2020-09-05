@@ -34,4 +34,68 @@ Finally, you'll be prompted with where to save your project. Obviously, this is 
 ## Setting up your workspace
 When you first open up your project, Xcode should look something like this:
 
-<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/MainView.png" width="400">
+<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/MainView.png" width="800">
+
+First, in the righthand window pane, hit "Resume" towards the top to get a preview of what your app will look like. Once you do this, you'll probably see an iPhone SE2. If you want to change the device you're working on, click the dropdown menu in the top left, select your new device, and hit resume again.
+
+I decided to use the iPhone 11 Pro, so my preview looks like this:
+
+<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/LivePreview.png" width="250">
+
+## Making your first changes
+
+This page looks a little boring, so we're going to spruce it up. First off, let's make some changes to the Hello, World! label by changing the font and foreground color.
+
+```
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .font(.title)
+            .foregroundColor(.orange)
+    }
+}
+```
+> As you can see above, adding a `.` after the **element** (in this case `Text`) allows us to add **modifiers** to it. For now we're going to make the font bigger, and we're going to make the text color orange. Notice that the `.title` and `.orange` both have `.` in front of them. That's because they are **properties**. So, in short, **elements** can have **modifiers** apply **properties** to them.
+Notice how as you added attributes, the live preview automatically updates.
+
+Now, while that does look a lot better, orange on white is pretty hard to read, so we're going to make our background Illini themed:
+```
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .font(.title)
+            .foregroundColor(.orange)
+            .background(Color.blue)
+    }
+}
+```
+
+That looks a lot better! However, I don't like how close the borders are and how sharp the corners are. Let's change those too!
+```
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .font(.title)
+            .foregroundColor(.orange)
+            .background(Color.blue)
+            .padding()
+            .cornerRadius(10)
+    }
+}
+```
+Huh. We added padding (extra space around an element), and even set the `cornerRadius` to 10 but nothing changed? This is because in SwiftUI, the order in which you apply modifiers matters. Right now, we're putting padding around an object with a background. What we want to do is apply a background to an object with padding:
+```
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, World!")
+            .font(.title)
+            .foregroundColor(.orange)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(10)
+    }
+}
+```
+
+Much better. Looking back at what we did before though, I think the vertical spacing on the background was fine. See if you can find a **property** to make your text look like this:
+<img src="https://github.com/SiGMobileUIUC/HelloWorldiOS/blob/master/Resources/Images/LivePreview.png" width="250">
